@@ -16,7 +16,7 @@ use \stdClass;
  */
 class Mymongo
 {
-    public $pageNum = 1;
+    public $pageNum = 53;
     public $showPage = 5;
     private $confArr = array();
     public static $curMongo = false;

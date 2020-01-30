@@ -156,14 +156,14 @@ class Index extends Common
         if($page<1){
             $page = 1;
         }
-        $skip = ($page - 1)*1;
+        $skip = ($page - 1)*$pageNum;
 
         $myMongo = new Mymongo(config('database.connections.mongo'));
         $manager = $myMongo->getManager();
         $filter = ['status' => 0];
         $options = [
             'sort' => ['_id' => -1],
-            'limit'=>1,
+            'limit'=>$pageNum,
             'skip'=>$skip
         ];        
         $query = new \MongoDB\Driver\Query($filter, $options);
