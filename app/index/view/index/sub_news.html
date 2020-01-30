@@ -163,8 +163,7 @@
         }
         $("#paths").val('['+_paths.toString()+']')
         $.post("/index/index/subnews.html",$("#form").serialize(),function(data){
-            return;
-            if(data.status==1){
+            if(data.status!='0'||data.status!=0){
               $(".alert-danger").show()
               $(".alert-success").hide()
             } else {
