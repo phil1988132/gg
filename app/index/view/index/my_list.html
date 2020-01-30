@@ -58,6 +58,8 @@
                   <tr>
                     <th><i class="fa fa-bullhorn"></i>id</th>
                     <th class="hidden-phone"><i class="fa fa-question-circle"></i> url</th>
+                    <th class="hidden-phone"><i class="fa fa-question-circle"></i> 设备</th>
+                    <th class="hidden-phone"><i class="fa fa-question-circle"></i> 类型</th>
                     <th>edit</th>
                   </tr>
                 </thead>
@@ -68,6 +70,8 @@
                       {$vo._id}
                     </td>
                     <td>{$vo.url}</td>
+                    <td>{if condition="$vo['device'] eq 1"}电脑{else:}手机{/if}</td>
+                    <td>{if condition="$vo['type'] eq 1"}普通广告{else:}播放广告{/if}</td>
                     <td>
                     <!--  
                       <button class="btn btn-primary btn-xs" rel="{$vo._id}"><i class="fa fa-pencil"></i></button>
