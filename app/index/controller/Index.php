@@ -64,7 +64,7 @@ class Index extends Common
             //var_dump($pName);var_dump($info);exit;
             if($info&&file_exists($pName)){
                 // 输出 42a79759f284b767dfcb2a0197904287.jpg
-                echo json_encode(['uploaded' => $dirSep . 'upload'.$dirSep.$rand]);
+                echo json_encode(['uploaded' => $dirSep . 'ads'.$dirSep.$rand]);
             }else{
                 echo json_encode(['error'=>'上传失败']);
             }  
