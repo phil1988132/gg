@@ -148,7 +148,7 @@ class Index extends Common
     }
     public function myList()
     {
-        $pageNum = 1;
+        $pageNum = 53;
         if (!$this->checkLogin()) {
             return redirect('/index/login.html');
         }
