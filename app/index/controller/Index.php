@@ -137,7 +137,7 @@ class Index extends Common
                 return ['status' => 1];
             }
             $nonce = mt_rand(1,30000);// 
-            $result = $this->curl_post( 'http://127.0.0.1:8885/api', ['ads'=>$paths,'device'=>(int)$_POST['device'],'type'=>(int)$_POST['type'],'title'=>addslashes($_POST['title'])],["nonce:{$nonce}","token:".md5($nonce."..,".self::_K)]);
+            $result = $this->curl_post( 'http://127.0.0.1:8885/api', ['ads'=>$paths,'device'=>(int)$_POST['device'],'type'=>(int)$_POST['type'])],["nonce:{$nonce}","token:".md5($nonce."..,".self::_K)]);
 
             $status = 0;
 
