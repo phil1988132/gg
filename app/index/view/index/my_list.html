@@ -60,11 +60,13 @@
                     <th class="hidden-phone"><i class="fa fa-question-circle"></i> url</th>
                     <th class="hidden-phone"><i class="fa fa-question-circle"></i> 设备</th>
                     <th class="hidden-phone"><i class="fa fa-question-circle"></i> 类型</th>
+                    <th class="hidden-phone"><i class="fa fa-question-circle"></i> 类型</th>
                     <th>edit</th>
                   </tr>
                 </thead>
                 <tbody>
                   {foreach $list as $vo }
+                  <?php $img = str_replace('ads','upload',$vo['path']);?>
                   <tr id="qq{$vo._id}">
                     <td>
                       {$vo._id}
@@ -72,6 +74,7 @@
                     <td>{$vo.url}</td>
                     <td>{if condition="$vo['device'] eq 1"}电脑{else:}手机{/if}</td>
                     <td>{if condition="$vo['type'] eq 1"}普通广告{else:}播放广告{/if}</td>
+                    <td><img  class="tp" rel="{$vo._id}" src="{$img}" style="overflow: hidden;width:200px;"></td>
                     <td>
                     <!--  
                       <button class="btn btn-primary btn-xs" rel="{$vo._id}"><i class="fa fa-pencil"></i></button>
@@ -79,6 +82,7 @@
                       <button class="btn btn-danger btn-xs" rel="{$vo._id}"><i class="fa fa-trash-o "></i></button>
                     </td>
                   </tr>
+                  <tr  class="img{$vo._id}" style="display: none;"><td colspan="6" style="text-align:center;"><img src="{$img}" style="width: : 100%;overflow: hidden;"></td></tr>
                   {/foreach}
                 </tbody>
               </table>
@@ -141,6 +145,14 @@
               }
           });
 
+      })
+      $(".tp").mouseover(function(){
+         _id = $(this).attr('rel')
+         $(".img"+_id).show()
+      })
+      $(".tp").mouseout(function(){
+         _id = $(this).attr('rel')
+         $(".img"+_id).hide()
       })
     })
   </script>
